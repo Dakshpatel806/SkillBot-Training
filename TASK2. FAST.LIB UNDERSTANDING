@@ -1,0 +1,20 @@
+Fast.lib is a standard cell library for designing faster gate designs in VLSI.
+It contains 477 cells, each of which represents a different logic gate or transistor.
+Fast.lib is designed for use in 45nm technology
+minimum power supply voltage is 1.32 V.
+Each cell in fast.lib has a corresponding gate level netlist and information about its capacitance, area, and other physical characteristics.
+Fast.lib is a valuable resource for designing faster gate designs in VLSI and is used by a variety of EDA tools.
+The 120°C temperature is a typical operating temperature for high-speed VLSI circuits
+Delay of 1ns ensures that the cells in the library can operate reliably at this temperature.
+Each cell in fast.lib has a corresponding gate level netlist. 
+This netlist is used by RTL to map the respective gate to the physical cell in the library. 
+The fast.lib file also contains information about the capacitance, area, and other physical characteristics of each cell. 
+This information is used by the physical design tools to optimize the layout of the circuit.
+Each cell in the fast.lib file has respective pins that are interconnected with wires, ploty, etc. to realize transmission. 
+The pins on a cell represent the electrical connections to the cell. The wires and ploty are used to connect the pins of different cells together to form a circuit.
+Look-up tables in the fast.lib file are used by the EDA tools to synthesize and place and route the circuit. 
+The EDA tools use the information in the look-up tables to generate a physical layout of the circuit that meets the desired timing and power requirements.
+The look-up tables allow designers to quickly and easily generate accurate timing reports, which can be used to optimize the design of the circuit.
+The capacitance parameters in each cell's entry in the fast.lib file are meticulously delineated. This is important because the capacitance of each cell can have a significant impact on the timing and power of the circuit.
+The "fast.lib" file stands as a cornerstone in VLSI design, acting as a repository of crucial data that shapes the behavior, performance, and efficiency of integrated circuits. 
+ Liberty files can define libraries of cells with different levels of abstraction, allowing designers to choose the appropriate cell for their design's requirements.
