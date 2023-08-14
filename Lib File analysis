@@ -1,0 +1,25 @@
+import re
+
+fileToRead = "fast.lib"
+fileToWrite = "data.csv"
+print("CellName	AREA 	PIN	 ")
+with open(fileToRead,"r") as readFile:
+        file_contents = readFile.read()
+with open(fileToWrite,"w") as writeFile:
+	writeFile.write("CELLNAME, AREA, PIN")
+	for line in file_contents.split("\n"):
+		pattern = r'\bcell\s+\((\w+)\)\s*{'
+		pattern2= r'^\s*area\s*:\s*([\d.]+);'
+		pattern3= r'pin\((\w+)\)'
+		matched=re.findall(pattern,line)
+		matched2=re.findall(pattern2,line)
+		matched3=re.findall(pattern3,line)
+		for i in matched:
+			print(i)
+       		 	writeFile.write("\n"+i+' , ')
+		for j in matched2:
+			print(j)
+   	    	 	writeFile.write(j+' , ')
+		for k in matched3:
+			print(k)
+        		writeFile.write(k+',')
