@@ -1,0 +1,37 @@
+#!/usr/bin/tclsh 
+proc matrixMultiply {matrixA matrixB} {
+    set numRowsA [llength $matrixA]
+    set numColsA [llength [lindex $matrixA 0]]
+    set numRowsB [llength $matrixB]
+    set numColsB [llength [lindex $matrixB 0]]
+
+    if {$numColsA != $numRowsB} {
+        return "Error: Incompatible matrix sizes for multiplication"
+    }
+
+    set result [list]
+    for {set i 0} {$i < $numRowsA} {incr i} {
+        set newRow {}
+
+        for {set j 0} {$j < $numColsB} {incr j} {
+            set sum 0
+
+            for {set k 0} {$k < $numColsA} {incr k} {
+                set sum [expr {$sum + [lindex $matrixA $i $k] * [lindex $matrixB $k $j]}]
+            }
+            lappend newRow $sum
+        }
+        lappend result $newRow
+    }
+    return $result
+}
+# Matrix A (2x3)
+set matrixA {{1 2 3} {4 5 6}}
+# Matrix B (3x2)
+set matrixB {{7 8} {9 10} {11 12}}
+
+set resultMatrix [matrixMultiply $matrixA $matrixB]
+puts "Result Matrix:"
+foreach row $resultMatrix {
+    puts [join $row " "]
+}
