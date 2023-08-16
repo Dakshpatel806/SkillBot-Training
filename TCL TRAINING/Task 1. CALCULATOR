@@ -1,21 +1,14 @@
 #!/usr/bin/tclsh
 
-# Define addition procedure
 proc add {a b} {
     return [expr $a + $b]
 }
-
-# Define subtraction procedure
 proc subtract {a b} {
     return [expr $a - $b]
 }
-
-# Define multiplication procedure
 proc multiply {a b} {
     return [expr $a * $b]
 }
-
-# Define division procedure
 proc divide {a b} {
     if {$b == 0} {
         return "Error: Division by zero"
@@ -23,7 +16,6 @@ proc divide {a b} {
     return [expr $a / $b]
 }
 
-# Main calculator loop
 while {1} {
     puts "Calculator Options:"
     puts "1. Addition"
@@ -33,12 +25,10 @@ while {1} {
     puts "5. Quit"
     
     set choice [gets stdin]
-    
     if {$choice == 5} {
         puts "Exiting the calculator."
         break
     }
-    
     set num1 [gets stdin]
     set num2 [gets stdin]
     
