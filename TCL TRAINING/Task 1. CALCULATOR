@@ -1,3 +1,5 @@
+#!/usr/bin/tclsh
+
 # Define addition procedure
 proc add {a b} {
     return [expr $a + $b]
